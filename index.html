@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<!-- 
+    
+  Project: Version 1.0
+  Document: Build 1
+	
+  Chat created by Luis Gerhorst -  Website: http://luisgerhorts.de/ - Mail & Jabber: luis@luisgerhorst.de
+  Fork me on GitHub http://github.com/luisgerhorst/node-chat
+	
+-->
+
+  <title>Instachat</title>
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="content-language" content="de-de" />
+  <meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0;"/>
+  
+  <link rel="stylesheet" type="text/css" href="style.css">
+  
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="send.js"></script>
+  <script type="text/javascript" src="load.js"></script>
+  <script type="text/javascript" src="javascript.js"></script>
+
+</head>
+<body onunload="remove()">
+
+<div id="wrapper">
+
+<div id="guidance">
+	<p><b>Instachat is a bit different to normal chats:</b></p>
+	<ol>
+		<li>Everything you type into the message field is sent to the server instantly</li>
+		<li>There's always only one entry per person</li>
+		<li>Just entries from persons who are online are visible</li>
+		<li>Use enter to reset the message field</li>
+	</ol>
+	<p class="hide-guidance">hide</p>
+</div> 
+
+<div id="chat"><noscript><p>You have to enable Javascript to use this chat.</p></noscript></div> <!-- #chat (will be filled with the content of chat.txt by refresh.js)  -->
+
+
+<form class="form" id="new">
+
+  <div class="name hide" id="name"></div>
+  <input class="name show" id="new_name" name="name" placeholder="      Name" autocomplete="on">
+
+  <input class="message" id="new_message" name="message" placeholder="Message" onkeyup="return send(event)" autocomplete="off" > <!-- onKeyPress="return send(event)" calls the Javascript function (send) which sends the data to the server -->
+
+</form> <!-- #new -->
+
+
+</div> <!-- #wrapper -->
+
+
+</body>
