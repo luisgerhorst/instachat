@@ -1,7 +1,6 @@
 // Build 1
 
 var userID = Math.round(Math.random() * 9999999999);
-var requestType = 'save';
 
 function send(e) {
 

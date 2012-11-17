@@ -1,5 +1,8 @@
 // Build 1
 
+//function start() { // I'm wrapping the whole code in a function so I can export it as module (and for example start all my files with one command)
+
+
 /* get's the by send.js sent data */
 
 
@@ -9,10 +12,8 @@ var http = require("http"),
     fs = require('fs');
 
 
-// starts a server and listens on port 8002
-var port = 8010;
-http.createServer(onRequest).listen(port);
-console.log("Server started, listening on port " + port + "\n");
+// starts a server and listens on port 8010
+http.createServer(onRequest).listen(8010);
 
 
 // listens for the POST data
@@ -44,6 +45,12 @@ function onRequest(req, res) {
         	if (requestType == 'save') save(userID, name, message);
         	if (requestType == 'remove') remove(userID);
         }
+        
+        // function via http://css-tricks.com/snippets/javascript/htmlentities-for-javascript/ - encodes HTML tags
+        function encodeHTML(text) {
+	        return String(text).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+	    }
+
         
     });
     
@@ -104,11 +111,6 @@ function response(res) {
     
 }
 
-// function via http://css-tricks.com/snippets/javascript/htmlentities-for-javascript/ - encodes HTML tags
-function encodeHTML(text) {
-    return String(text).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
-}
-
 setInterval(function() {
     autoRemove();
 }, 60*60*1000);
@@ -121,3 +123,10 @@ function autoRemove() {
 		}
 	}
 }
+
+
+/*} // start()
+
+start(); // starts the chat
+
+exports.start = start; // makes start() available as module*/
