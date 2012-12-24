@@ -20,7 +20,7 @@ Instachat is a bit different to normal chats:
 
 2. Download instachat and navigate to it's directory.
 
-3. Open send.js in a text editor, change 'http://luisgerhorst.de:8010/' in line 22 to your server's domain and save the file. (For example if your domain is 'http://alf.me/' you have to change it to 'http://alf.me:8010/'.)
+3. Open send.js in a text editor, change 'http://luisgerhorst.de:9003/' in line 22 to your server's domain and save the file. (For example if your domain is 'http://alf.me/' you have to change it to 'http://alf.me:9003/'.)
 
 4. Open load.js and change 'http://luisgerhorst.de:8010/' in line 18 to your server's domain and save the file.
 

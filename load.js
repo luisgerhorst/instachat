@@ -15,7 +15,7 @@ setInterval(function() {
 function load() {
 
     $.ajax({
-        url: 'http://luisgerhorst.de:8010/',
+        url: 'http://luisgerhorst.de:9003/',
         crossDomain: true,
         cache: false,
         dataType: "jsonp",
