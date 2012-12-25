@@ -1,5 +1,3 @@
-**Version 1.0**
-
 send.js sends the message (using jQuery Ajax) to server.js that creates an array with all users in it. load.js send's a request to server which creates the html with the values of the array and returns it to the client.
 
 # Guidance
